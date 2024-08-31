@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "nuxt-lucide-icons"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "shadcn-nuxt",
+    "nuxt-lucide-icons",
+    "@nuxtjs/color-mode",
+  ],
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
@@ -21,4 +26,7 @@ export default defineNuxtConfig({
      */
     componentDir: "./components/ui",
   },
+  colorMode: {
+    classSuffix: ''
+  }
 });

@@ -1,8 +1,9 @@
 # Learn: Personal Course and Project Tracker
- 
+
 Nuxt js project to track courses and projects. Still in development
 
 ## Features
+
 - Dashboard
 - Courses and projects tracker
 - Grade tracker and calculator
@@ -11,6 +12,7 @@ Nuxt js project to track courses and projects. Still in development
 - More to be added soon
 
 ## Development Checkpoints
+
 - [x] Project setup
 - [x] Layouts
 - [x] Sidebar navigation
@@ -32,8 +34,8 @@ Nuxt js project to track courses and projects. Still in development
 - [ ] User Profile
 - [ ] User Authentication
 
-
 ## Technologies
+
 - Nuxt js
 - Tailwind CSS
 - Shadcn UI
@@ -74,4 +76,3 @@ yarn dev
 # bun
 bun run dev
 ```
-

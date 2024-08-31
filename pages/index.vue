@@ -13,7 +13,9 @@ const date = ref(new Date());
     <div class="col-span-3">
       <div class="px-4 py-8 lg:px-8">
         <div class="mb-8">
-          <h1 class="text-2xl font-semibold tracking-tight">Welcome Back User!</h1>
+          <h1 class="text-2xl font-semibold tracking-tight">
+            Welcome Back User!
+          </h1>
           <p class="text-gray-500">
             Here are some of the things you can do today.
           </p>
@@ -57,9 +59,7 @@ const date = ref(new Date());
             <Calendar v-model="date" class="rounded-md border" />
           </div>
           <div class="mt-8">
-            <h1 class="text-2xl font-semibold tracking-tight">
-              To-Do's
-            </h1>
+            <h1 class="text-2xl font-semibold tracking-tight">To-Do's</h1>
             <div class="mt-4 space-y-2">
               <Card>
                 <CardHeader>
@@ -69,7 +69,7 @@ const date = ref(new Date());
                       <CardDescription>Task Description</CardDescription>
                     </div>
                     <div>
-                        <Icon icon="ic:sharp-chevron-right" class="h-8 w-8"/>
+                      <Icon icon="ic:sharp-chevron-right" class="h-8 w-8" />
                     </div>
                   </div>
                 </CardHeader>

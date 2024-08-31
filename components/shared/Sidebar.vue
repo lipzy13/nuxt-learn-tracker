@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { cn } from "@/lib/utils";
+
 import { Separator } from "@/components/ui/separator";
+
+import { personal, library, actions } from "@/data/navigation";
+
+const route = useRoute();
 </script>
 
 <template>
@@ -20,35 +25,33 @@ import { Separator } from "@/components/ui/separator";
           Learning
         </h2>
         <div class="space-y-1">
-          <Button variant="secondary" class="w-full justify-start">
-            <Icon icon="ant-design:home-filled" class="mr-2 h-4 w-4" />
-            Home
-          </Button>
-          <Button variant="ghost" class="w-full justify-start">
-            <Icon icon="ph:squares-four-bold" class="mr-2 h-4 w-4" />
-            My Courses
-          </Button>
-          <Button variant="ghost" class="w-full justify-start">
-            <Icon icon="ic:outline-task" class="mr-2 h-4 w-4" />
-            Tasks
-          </Button>
-          <Button variant="ghost" class="w-full justify-start">
-            <Icon icon="icon-park:ranking" class="mr-2 h-4 w-4" />
-            Grades
-          </Button>
+            <Button
+              v-for="person in personal"
+              :variant="route.path === person.url ? 'default' : 'ghost'"
+              class="w-full justify-start"
+              as-child
+            >
+              <NuxtLink :to="person.url">
+                <Icon :icon="person.icon" class="mr-2 h-4 w-4" />
+                {{ person.name }}
+              </NuxtLink>
+            </Button>
         </div>
       </div>
       <Separator />
       <div class="px-3 py-2">
         <h2 class="mb-2 px-4 text-lg font-semibold tracking-tight">Library</h2>
         <div class="space-y-1">
-          <Button variant="ghost" class="w-full justify-start">
-            <Icon icon="bx:bx-book-open" class="mr-2 h-4 w-4" />
-            Courses
-          </Button>
-          <Button variant="ghost" class="w-full justify-start">
-            <Icon icon="ant-design:project" class="mr-2 h-4 w-4" />
-            Projects
+          <Button
+              v-for="lib in library"
+              :variant="route.path === lib.url ? 'default' : 'ghost'"
+              class="w-full justify-start"
+              as-child
+          >
+            <NuxtLink :to="lib.url">
+              <Icon :icon="lib.icon" class="mr-2 h-4 w-4" />
+              {{ lib.name }}
+            </NuxtLink>
           </Button>
         </div>
       </div>
@@ -56,17 +59,16 @@ import { Separator } from "@/components/ui/separator";
 
     <div class="px-3 py-1">
       <div class="space-y-1">
-        <Button variant="ghost" class="w-full justify-start">
-          <Icon icon="bx:bx-user" class="mr-2 h-4 w-4" />
-          Account
-        </Button>
-        <Button variant="ghost" class="w-full justify-start">
-          <Icon icon="mdi:settings" class="mr-2 h-4 w-4" />
-          Settings
-        </Button>
-        <Button variant="ghost" class="w-full justify-start">
-          <Icon icon="ic:round-logout" class="mr-2 h-4 w-4" />
-          Logout
+        <Button
+            v-for="act in actions"
+            :variant="route.path === act.url ? 'default' : 'ghost'"
+            class="w-full justify-start"
+            as-child
+        >
+          <NuxtLink :to="act.url">
+            <Icon :icon="act.icon" class="mr-2 h-4 w-4" />
+            {{ act.name }}
+          </NuxtLink>
         </Button>
       </div>
     </div>
