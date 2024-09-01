@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 import CourseCard from "@/components/shared/CourseCard.vue";
 import ProjectCard from "@/components/shared/ProjectCard.vue";
 import { Calendar } from "@/components/ui/v-calendar";
 
 import { ref } from "vue";
+
+import courses from "@/data/courses";
+
 const date = ref(new Date());
 </script>
 
@@ -27,12 +29,12 @@ const date = ref(new Date());
           <div>
             <a href="#" class="text-primary-500 flex items-center space-x-1">
               More
-              <Icon icon="mingcute:right-fill" class="h-4 w-4" />
+              <Icon name="mingcute:right-fill" class="h-4 w-4" />
             </a>
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4 my-4">
-          <CourseCard v-for="index in 2" :key="index" />
+          <CourseCard v-for="course in courses.slice(0, 2)" :key="course.id" :course="course" />
         </div>
 
         <div class="flex justify-between items-center mt-10">
@@ -42,7 +44,7 @@ const date = ref(new Date());
           <div>
             <a href="#" class="text-primary-500 flex items-center space-x-1">
               More
-              <Icon icon="mingcute:right-fill" class="h-4 w-4" />
+              <Icon name="mingcute:right-fill" class="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -69,7 +71,7 @@ const date = ref(new Date());
                       <CardDescription>Task Description</CardDescription>
                     </div>
                     <div>
-                      <Icon icon="ic:sharp-chevron-right" class="h-8 w-8" />
+                      <Icon name="ic:sharp-chevron-right" class="h-8 w-8" />
                     </div>
                   </div>
                 </CardHeader>
