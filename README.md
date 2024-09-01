@@ -34,6 +34,19 @@ Nuxt js project to track courses and projects. Still in development
 - [ ] User Profile
 - [ ] User Authentication
 
+
+## Current Progress
+
+- Courses page
+
+    - [x] Content view for subcourses
+    - [x] Action button for edit and delete courses (alert for deleting courses)
+    - [ ] Modal for edit the courses
+    - [ ] Add subcourses
+    - [ ] Task view for subcourses
+    - [ ] Grades calculator for courses (might be changed to resources, but idk)
+
+
 ## Technologies
 
 - Nuxt js

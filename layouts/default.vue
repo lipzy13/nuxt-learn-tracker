@@ -8,9 +8,9 @@
     <div class="bg-background">
       <div class="grid lg:grid-cols-6">
         <SharedSidebar />
-        <div class="col-span-5 container border-l">
+        <ScrollArea class="col-span-5 container border-l h-screen">
           <slot />
-        </div>
+        </ScrollArea>
       </div>
     </div>
   </div>
